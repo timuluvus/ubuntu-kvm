@@ -1,0 +1,22 @@
+ubuntu-vm-builder kvm hardy \
+                  --domain newvm \
+                  --dest newvm \
+                  --arch i386 \
+                  --hostname hostnameformyvm \
+                  --mem 256 \
+                  --user john \
+                  --pass doe \
+                  --bridge=br0
+                  --ip 192.168.1.101 \
+                  --mask 255.255.255.0 \
+                  --net 192.168.1.0 \
+                  --bcast 192.168.1.255 \
+                  --gw 192.168.1.1 \
+                  --dns 8.8.8.8 8.8.4.4 \
+                  --mirror http://archive.localubuntumirror.net/ubuntu \
+                  --components main,universe \
+                  --addpkg acpid \ 
+                  --addpkg vim \
+                  --addpkg openssh-server \
+                  --addpkg avahi-daemon \
+                  --libvirt qemu:///system ;
